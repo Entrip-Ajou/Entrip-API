@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+   <head>
+      <meta charset="UTF-8" />
+
+      <link rel="stylesheet" href="main_page/header.css">
+      <link rel="stylesheet" href="main_page/reset.css">
+      <link rel="stylesheet" href="community_page/community.css">
+      <link rel="stylesheet" href="community_page/search.css">
+      <link rel="stylesheet" href="community_page/detail_board.css">
+
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+
+      <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script> -->
+
+      <script language="javascript">
+        </script>
+   </head>
+   <body>
+     <div class="wrapper">
+      <header class="header" id="header">
+        <div class="logo"><a href="index.html">
+          <img src="img/main_page/logo.png" alt="LOGO"></a></div>
+        <ul>
+          <li class="menu"><a href="planner.html" class="navLinks">플래너</a></li>
+          <li class="menu"><a href="#recommand" class="navLinks">추천 여행지</a></li>
+          <li class="menu"><a href="#test" class="navLinks">테스트</a></li>
+          <li class="menu"><a href="community_free.html" class="navLinks">커뮤니티</a></li>
+        </ul>
+        <div class="link"><a href="#download"><img src="../img/main_page/download.png" alt="DOWNLOAD"></a></div>
+      </header>
+      <main class="content">
+        <ul class="title">
+          <li class="board"><a href="community_free.html" style="color: #0096dc; text-decoration: underline">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp자유게시판&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></li>
+          <li class="board"><a href="community_information.html">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp정보게시판&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></li>
+        </ul>
+        <div class="inputbox">
+          <input type="text" id="filterText"><img src="../img/community_page/search.png">
+        </div>
+        <ul class="board-list js-board-list">
+          <li class="board-item js-board-item"><p>제주도 여행 후기</p><img src="../img/community_page/ex_instagram.png"></li>
+          <li class="board-item js-board-item"><p>여수 여행 후기</p><img src="../img/community_page/ex_instagram.png"></li>
+          <li class="board-item js-board-item"><p>대구 여행 후기</p><img src="../img/community_page/ex_instagram.png"></li>
+        </ul>
+        <div class="background">
+          <div class="popup"><a id="close"></a></div>
+      </div>
+      </main>
+    </div>
+
+    <a href="#pop_info_1" class="btn_open">팝업 열기</a>
+<a href="#pop_info_2" class="btn_open">팝업 열기2</a>
+
+<!-- 팝업1 -->
+<div id="pop_info_1" class="pop_wrap" style="display:none;">
+  <div class="pop_inner">
+    <p class="dsc">팝업 안내문구 입니다.</p>
+    <button type="button" class="btn_close">닫기</button>
+  </div>
+</div>
+    <!-- <script src="<c:url value="/resourc/es/js/jquery-2.1.4.min.js"/>"></script>  -->
+    <script type="text/javascript" src="community_page/search.js"></script>
+    <script type="text/javascript" src="community_page/popup.js"></script>
+
+    <script>
+      var target = document.querySelectorAll('.btn_open');
+      var targetID;  // 버튼 클릭시 버튼에 해당하는 팝업의 id값 담는 변수
+    
+      // 팝업 열기
+      for(var i = 0; i < target.length; i++){
+        target[i].addEventListener('click', function(){
+          targetID = this.getAttribute('href');
+          document.querySelector(targetID).style.display = 'block';
+        });
+      }
+    </script>
+  </body>
+</html>

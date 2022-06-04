@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+   <head>
+      <meta charset="UTF-8" />
+
+      <link rel="stylesheet" href="planner_page/daterangepicker.css" />
+      <link rel="stylesheet" href="planner_page/todolist.css" />
+      <link rel="stylesheet" href="main_page/header.css">
+      <link rel="stylesheet" href="main_page/reset.css">
+      
+
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+
+      <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script> -->
+
+      <script language="javascript">
+        </script>
+   </head>
+   <body>
+     <div class="wrapper">
+      <header class="header" id="header">
+        <div class="logo"><a href="index.html">
+          <img src="../img/main_page/logo.png" alt="LOGO"></a></div>
+        <ul>
+          <li class="menu"><a href="planner.html" class="navLinks">플래너</a></li>
+          <li class="menu"><a href="#recommand" class="navLinks">추천 여행지</a></li>
+          <li class="menu"><a href="#test" class="navLinks">테스트</a></li>
+          <li class="menu"><a href="community_free.html" class="navLinks">커뮤니티</a></li>
+        </ul>
+        <div class="link"><a href="#download"><img src="img/main_page/download.png" alt="DOWNLOAD"></a></div>
+      </header>
+      <main id="content">
+        <div class="title">
+          <div id="text">여행 플래너</div>
+          <div id="show"><img src="../img/planner_page/2.png"></div>
+        </div>
+        <div class="container">
+          <div class="col-md-4 col-md-offset-2 demo">
+            <input type="text" id="config-demo" class="form-control" placeholder="">
+              <img src= "../img/planner_page/calendar.png" onclick="click.daterangepicker">
+          </div>
+        </div>
+        <ul id="list"></ul>
+        <div class="background">
+            <div class="popup"><a id="close"><img src="../img/planner_page/overlay.png"></a></div>
+        </div>
+        <ul class="todo-list js-todo-list">
+          <div class="todo-box">
+            <div class="todo-input-box">
+              <img class="todo-timeimg" src = "../img/planner_page/time.png">
+              <input type="time" class="todo-time">
+              <input type="time" class="todo-time">
+              <img class="todo-inputimg" src = "../img/planner_page/content.png">
+              <input type="text" class="todo-input js-todo-input" placeholder="일정 입력">
+              <img class="none" src="../img/planner_page/closebtn.png">
+            </div>
+          </div>
+        </ul>
+        <div class="todo-plus js-todo-plus">
+          <button class="plus"><img src="../img/planner_page/plus.png"></button>
+        </div>
+      </main>
+    </div>
+        
+    <script type="text/javascript" src="planner_page/daterangepicker.js">
+    // $(function() {
+    //   $( "#datepicker" ).datepicker({ minDate: 0});
+    //   });
+    </script>
+    <script src="planner_page/popup.js"></script>
+    <script src="planner_page/todolist.js" ></script>
+    <script type="text/javascript">
+      $('#config-demo').daterangepicker({ 
+        "locale": {
+          "format": "YYYY.MM.DD", 
+          "separator": " - ", 
+          "applyLabel": "확인", 
+          "cancelLabel": "취소", 
+          "fromLabel": "From", 
+          "toLabel": "To",
+          "customRangeLabel": "Custom",
+          "weekLabel": "W", 
+          "daysOfWeek": ["일", "월", "화", "수", "목", "금", "토"], 
+          "monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"], }, 
+          }, 
+
+          function (start, end, label) { 
+            console.log('New date range selected: ' + start.format('YYYY.MM.DD') + ' to ' + end.format('YYYY.MM.DD') + ' (predefined range: ' + label + ')'); 
+            // console.log(end.format - start.format);
+          });
+
+          // $('#config-demo').checkout(function() {
+          //   console.log('abck');
+          // });
+    </script>
+  </body>
+</html>

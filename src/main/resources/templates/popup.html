@@ -1,0 +1,25 @@
+<ul>
+<li><a class="first"><img src="img/1.png"></a></li>
+<li><a id="show"><img src="img/2.png"></a></li> 
+
+<div class="background">
+  <div class="window">
+    <div class="popup"><a id="close"><img src="img/overlay.png"></a>
+    </div>
+  </div>
+</div>
+</ul>
+
+<script>
+    function show() {
+      document.querySelector(".background").className = "background show";
+    }
+
+    function close() {
+      document.querySelector(".background").className = "background";
+    }
+
+    document.querySelector("#show").addEventListener("click", show);
+    document.querySelector("#close").addEventListener("click", close);
+  </script>
+</div>

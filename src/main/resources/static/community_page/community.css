@@ -1,0 +1,68 @@
+html {
+	height: 100%;
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  margin: 10% 0 0;
+  justify-content: center;
+  width: 100%;
+  display: flex;
+}
+
+.board{
+  display: inline-block;
+  padding: 0;
+  margin: 7% 0 3%;
+  font-size: 16px;
+}
+
+.board>a{
+  text-decoration: none;
+  color: black;
+}
+
+.board>a:hover {
+  cursor: pointer;
+}
+
+.board-list {
+  margin: 3% 0;
+  width: 834.1px;
+}
+
+.board-item {
+  position: relative;
+  height: 3rem;
+  margin: 5px 0;
+  border-radius: 6px;
+  border: solid 1px #eee;
+}
+
+.board-item p {
+  font-size: 18px;
+  line-height: 19px;
+  text-align: left;
+  position: absolute;
+  left: 1%;
+  top: 17%;
+}
+
+.board-item img {
+  width: 13%;
+  object-fit: contain;
+  position: absolute;
+  left: 1%;
+  bottom: 0;
+}

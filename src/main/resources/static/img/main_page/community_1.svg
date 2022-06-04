@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="638" height="203" viewBox="0 0 638 203">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 70px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        font-family: NotoSansCJKkr-Medium, Noto Sans CJK KR;
+        font-weight: 500;
+      }
+
+      .cls-2 {
+        fill: #3d3d3d;
+      }
+
+      .cls-2, .cls-3 {
+        font-size: 18px;
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="그룹_1007" data-name="그룹 1007" transform="translate(-644 -2301)">
+    <text id="커뮤니티" class="cls-1" transform="translate(831 2382)"><tspan x="0" y="0">커뮤니티</tspan></text>
+    <text id="자유게시판과_정보게시판에서_자유롭게_소통을_하고_다양한_정보를_주고받을_수_있어요." data-name="자유게시판과 정보게시판에서 자유롭게 소통을 하고 다양한 정보를 주고받을 수 있어요." class="cls-2" transform="translate(644 2443)"><tspan x="0" y="0">자유게시판과 정보게시판에서 자유롭게 소통을 하고 다양한 정보를 주고받을 수 있어요.</tspan></text>
+    <g id="그룹_433" data-name="그룹 433" transform="translate(-194 1183)">
+      <text id="게시판_구경_가기" data-name="게시판 구경 가기" class="cls-3" transform="translate(1084 1316)"><tspan x="0" y="0">게시판 구경 가기</tspan></text>
+      <g id="icon_navigation_chevron_right_24px" data-name="icon/navigation/chevron_right_24px" transform="translate(1208 1301)">
+        <rect id="Boundary" class="cls-4" width="16" height="16"/>
+        <path id="_Color" data-name=" ↳Color" d="M.951,0,0,.94,3.09,4,0,7.06.951,8,5,4Z" transform="translate(6 4)"/>
+      </g>
+    </g>
+  </g>
+</svg>
