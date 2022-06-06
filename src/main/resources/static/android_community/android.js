@@ -1,5 +1,5 @@
 function showAndroid(getUserId) {
-    Android.showToast(getUserId);
+    var a = Entrip.getUserId();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
