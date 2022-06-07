@@ -18,6 +18,7 @@ public class PlansResponseDto {
     private Long rgb;
     private Planners planners;
     private Set<Comments> comments;
+    private Boolean isExistComments;
 
     public PlansResponseDto (Plans entity) {
         this.plan_id = entity.getPlan_id();
@@ -28,5 +29,6 @@ public class PlansResponseDto {
         this.rgb = entity.getRgb();
         this.planners = entity.getPlanners();
         this.comments = entity.getComments();
+        this.isExistComments = !entity.isExistComments();
     }
 }

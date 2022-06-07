@@ -12,6 +12,7 @@ public class PlansReturnDto {
     private String location;
     private Long rgb;
     private Long planner_id;
+    private Boolean isExistComments;
 
     public PlansReturnDto (PlansResponseDto responseDto) {
         this.plan_id = responseDto.getPlan_id();
@@ -21,5 +22,6 @@ public class PlansReturnDto {
         this.location = responseDto.getLocation();
         this.rgb = responseDto.getRgb();
         this.planner_id = responseDto.getPlanners().getPlanner_id();
+        this.isExistComments = responseDto.getIsExistComments();
     }
 }

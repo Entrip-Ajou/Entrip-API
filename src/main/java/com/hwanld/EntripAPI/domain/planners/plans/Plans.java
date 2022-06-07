@@ -57,4 +57,7 @@ public class Plans {
         return this.planners.getPlanner_id();
     }
 
+    public Boolean isExistComments() {
+        return comments.isEmpty();
+    }
 }
