@@ -130,11 +130,11 @@ public class UsersService {
     }
 
     @Transactional
-    public int updateTravelFavorite (String user_id, int travelFavorite) {
+    public String updateTravelFavorite (String user_id, String travelFavorite) {
         Users users = usersRepository.findById(user_id).orElseThrow(
                 ()->new IllegalArgumentException("Error raised at usersRepository.findById, " + user_id)
         );
-        int result = users.updateTravelFavorite(travelFavorite);
+        String result = users.updateTravelFavorite(travelFavorite);
         return result;
     }
 }

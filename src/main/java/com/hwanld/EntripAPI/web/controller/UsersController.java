@@ -152,8 +152,8 @@ public class UsersController {
     }
 
     @PutMapping("api/v1/users/travelFavorite/{user_id}/{travelFavorite}")
-    public ResponseEntity<Messages> updateTravelFavorite (@PathVariable String user_id, @PathVariable int travelFavorite) {
-        int changed_travel_Favorite = usersService.updateTravelFavorite(user_id, travelFavorite);
+    public ResponseEntity<Messages> updateTravelFavorite (@PathVariable String user_id, @PathVariable String travelFavorite) {
+        String changed_travel_Favorite = usersService.updateTravelFavorite(user_id, travelFavorite);
         UsersResponseDto responseDto = usersService.findByUserId(user_id);
         UsersReturnDto returnDto = new UsersReturnDto(responseDto);
         Messages messages = Messages.builder()

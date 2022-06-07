@@ -12,7 +12,7 @@ public class UsersReturnDto {
     private String user_id;
     private String nickname;
     private int gender;
-    private int travelFavorite;
+    private String travelFavorite;
     private String photoUrl;
     private String token;
     //private Set<Friends> friends = new HashSet<Friends>();

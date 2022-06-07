@@ -279,59 +279,59 @@
                 $("#city").html(result[mbti]["city"]);
                 $("#explain").html(result[mbti]["explain"]);
 
-                switch (mbti) {
-                    case "SHPF":
-                        pesonality = 1;
-                        break;
-                    case "SHPR":
-                        pesonality = 2;
-                        break;
-                    case "SHLF":
-                        pesonality = 3;
-                        break;
-                    case "SHLR":
-                        pesonality = 4;
-                        break;
-                    case "SAPF":
-                        pesonality = 5;
-                        break;
-                    case "SAPR":
-                        pesonality = 6;
-                        break;
-                    case "SALF":
-                        pesonality = 7;
-                        break;
-                    case "SALR":
-                        pesonality = 8;
-                        break;
-                    case "IHPF":
-                        pesonality = 9;
-                        break;
-                    case "IHPR":
-                        pesonality = 10;
-                        break;
-                    case "IHLF":
-                        pesonality = 11;
-                        break;
-                    case "IHLR":
-                        pesonality = 12;
-                        break;
-                    case "IAPF":
-                        pesonality = 13;
-                        break;
-                    case "IAPR":
-                        pesonality = 14;
-                        break;
-                    case "IALF":
-                        pesonality = 15;
-                        break;
-                    case "IALR":
-                        pesonality = 16;
-                        break;
-                }
+<!--                switch (mbti) {-->
+<!--                    case "SHPF":-->
+<!--                        pesonality = 1;-->
+<!--                        break;-->
+<!--                    case "SHPR":-->
+<!--                        pesonality = 2;-->
+<!--                        break;-->
+<!--                    case "SHLF":-->
+<!--                        pesonality = 3;-->
+<!--                        break;-->
+<!--                    case "SHLR":-->
+<!--                        pesonality = 4;-->
+<!--                        break;-->
+<!--                    case "SAPF":-->
+<!--                        pesonality = 5;-->
+<!--                        break;-->
+<!--                    case "SAPR":-->
+<!--                        pesonality = 6;-->
+<!--                        break;-->
+<!--                    case "SALF":-->
+<!--                        pesonality = 7;-->
+<!--                        break;-->
+<!--                    case "SALR":-->
+<!--                        pesonality = 8;-->
+<!--                        break;-->
+<!--                    case "IHPF":-->
+<!--                        pesonality = 9;-->
+<!--                        break;-->
+<!--                    case "IHPR":-->
+<!--                        pesonality = 10;-->
+<!--                        break;-->
+<!--                    case "IHLF":-->
+<!--                        pesonality = 11;-->
+<!--                        break;-->
+<!--                    case "IHLR":-->
+<!--                        pesonality = 12;-->
+<!--                        break;-->
+<!--                    case "IAPF":-->
+<!--                        pesonality = 13;-->
+<!--                        break;-->
+<!--                    case "IAPR":-->
+<!--                        pesonality = 14;-->
+<!--                        break;-->
+<!--                    case "IALF":-->
+<!--                        pesonality = 15;-->
+<!--                        break;-->
+<!--                    case "IALR":-->
+<!--                        pesonality = 16;-->
+<!--                        break;-->
+<!--                }-->
                 var id = new URLSearchParams(location.search).get('user_id');
                 var newurl = "api/v1/users/travelFavorite/";
-                newurl = newurl + id + "/" + pesonality;
+                newurl = newurl + id + "/" + mbti;
                 fetch(newurl, {
                     method: 'PUT',
                     headers: {

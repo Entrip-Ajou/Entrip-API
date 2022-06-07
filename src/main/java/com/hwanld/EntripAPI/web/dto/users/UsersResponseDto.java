@@ -15,7 +15,7 @@ public class UsersResponseDto {
     private Set<Planners> planners = new HashSet<Planners>();
     private String nickname;
     private int gender;
-    private int travelFavorite;
+    private String travelFavorite;
     private String photoUrl;
     private String token;
     //private Set<Friends> friends = new HashSet<Friends>();

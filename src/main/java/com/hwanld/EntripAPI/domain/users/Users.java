@@ -38,12 +38,12 @@ public class Users extends BaseTimeEntity {
 
     @Column
     private int gender;
-    private int travelFavorite;
+    private String travelFavorite;
     private String photoUrl;
     private String token;
 
     @Builder
-    public Users (String user_id, String nickname, int gender, int travelFavorite, String photoUrl) {
+    public Users (String user_id, String nickname, int gender, String travelFavorite, String photoUrl) {
         this.user_id = user_id;
         this.nickname = nickname;
         this.gender = gender;
@@ -61,7 +61,7 @@ public class Users extends BaseTimeEntity {
         return this.token;
     }
 
-    public int updateTravelFavorite (int travelFavorite) {
+    public String updateTravelFavorite (String travelFavorite) {
         this.travelFavorite = travelFavorite;
         return this.travelFavorite;
     }
