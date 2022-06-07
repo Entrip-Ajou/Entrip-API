@@ -1,6 +1,7 @@
 package com.hwanld.EntripAPI.domain.posts;
 
 import com.hwanld.EntripAPI.domain.BaseTimeEntity;
+import com.hwanld.EntripAPI.domain.users.Users;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,13 +18,15 @@ public class Posts extends BaseTimeEntity {
     private Long post_id;
 
     @Column
-    private String author;
     private String title;
     private String content;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "USER_USERS_ID")
+    private Users users;
+
     @Builder
-    public Posts (String author, String title, String content) {
-        this.author = author;
+    public Posts (String title, String content) {
         this.title = title;
         this.content = content;
     }
@@ -32,4 +35,9 @@ public class Posts extends BaseTimeEntity {
         this.title = title;
         this.content = content;
     }
+
+    public void setUsers(Users users) {
+        this.users = users;
+    }
+
 }

@@ -2,7 +2,7 @@ package com.hwanld.EntripAPI.domain.users;
 
 import com.hwanld.EntripAPI.domain.BaseTimeEntity;
 import com.hwanld.EntripAPI.domain.planners.Planners;
-//import com.hwanld.EntripAPI.domain.users.friends.Friends;
+import com.hwanld.EntripAPI.domain.posts.Posts;
 import com.hwanld.EntripAPI.domain.users.friends.Friends;
 import lombok.Builder;
 import lombok.Getter;
@@ -28,6 +28,10 @@ public class Users extends BaseTimeEntity {
     @Column
     @OneToMany(mappedBy = "users", fetch = FetchType.EAGER)
     private Set<Friends> friends = new HashSet<Friends>();
+
+    @Column
+    @OneToMany(mappedBy = "users", fetch = FetchType.EAGER)
+    private Set<Posts> posts = new HashSet<Posts>();
 
     @Column(nullable = false)
     private String nickname;
@@ -60,5 +64,9 @@ public class Users extends BaseTimeEntity {
     public int updateTravelFavorite (int travelFavorite) {
         this.travelFavorite = travelFavorite;
         return this.travelFavorite;
+    }
+
+    public void addPosts(Posts posts) {
+        this.posts.add(posts);
     }
 }
