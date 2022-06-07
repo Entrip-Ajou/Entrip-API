@@ -1,6 +1,7 @@
 package com.hwanld.EntripAPI.web.controller;
 
 import com.hwanld.EntripAPI.domain.Messages;
+import com.hwanld.EntripAPI.domain.planners.plans.comments.Comments;
 import com.hwanld.EntripAPI.service.planners.plans.comments.CommentsService;
 import com.hwanld.EntripAPI.web.dto.planners.plans.comments.CommentsResponseDto;
 import com.hwanld.EntripAPI.web.dto.planners.plans.comments.CommentsReturnDto;
@@ -14,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.nio.charset.Charset;
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -23,13 +25,11 @@ public class CommentsController {
 
     @PostMapping("/api/v1/comments")
     public ResponseEntity<Messages> save(@RequestBody CommentsSaveRequestDto requestDto) {
-        Long saved_comment_id = commentsService.save(requestDto);
-        CommentsResponseDto responseDto = commentsService.findById(saved_comment_id);
-        CommentsReturnDto returnDto = new CommentsReturnDto(responseDto);
+        List<CommentsReturnDto> returnDtoList = commentsService.save(requestDto);
         Messages messages = Messages.builder()
                 .httpStatus(200)
                 .message("Comments is saved well")
-                .data(returnDto)
+                .data(returnDtoList)
                 .build();
         HttpHeaders headers= new HttpHeaders();
         headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
@@ -38,13 +38,11 @@ public class CommentsController {
 
     @PutMapping("/api/v1/comments/{comment_id}")
     public ResponseEntity<Messages> update (@PathVariable Long comment_id, @RequestBody CommentsUpdateRequestDto requestDto) {
-        Long updated_comment_id = commentsService.update(comment_id, requestDto);
-        CommentsResponseDto responseDto = commentsService.findById(updated_comment_id);
-        CommentsReturnDto returnDto = new CommentsReturnDto(responseDto);
+        List<CommentsReturnDto> returnDtoList = commentsService.update(comment_id,requestDto);
         Messages messages = Messages.builder()
                 .httpStatus(200)
                 .message("Comments is updated well")
-                .data(returnDto)
+                .data(returnDtoList)
                 .build();
         HttpHeaders headers= new HttpHeaders();
         headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
@@ -67,13 +65,26 @@ public class CommentsController {
 
     @DeleteMapping("/api/v1/comments/{comment_id}")
     public ResponseEntity<Messages> delete (@PathVariable Long comment_id) {
-        Long deleted_comment_id = commentsService.delete(comment_id);
+        List<CommentsReturnDto> returnDtoList = commentsService.delete(comment_id);
         Messages messages = Messages.builder()
                 .httpStatus(200)
-                .message("Delete comments with " + deleted_comment_id)
-                .data(deleted_comment_id)
+                .message("Delete comments with " + comment_id)
+                .data(returnDtoList)
                 .build();
         HttpHeaders headers= new HttpHeaders();
+        headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
+        return new ResponseEntity<>(messages, headers, HttpStatus.OK);
+    }
+
+    @GetMapping("/api/v1/comments/{plan_id}/getAllComments")
+    public ResponseEntity<Messages> getAllCommentsWithPlanId (@PathVariable Long plan_id) {
+        List<CommentsReturnDto> returnDtoList = commentsService.getAllCommentsWithPlanId(plan_id);
+        Messages messages = Messages.builder()
+                .httpStatus(200)
+                .message("Get all comments with plan id :  " + plan_id)
+                .data(returnDtoList)
+                .build();
+        HttpHeaders headers = new HttpHeaders();
         headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
         return new ResponseEntity<>(messages, headers, HttpStatus.OK);
     }

@@ -6,6 +6,7 @@ import com.hwanld.EntripAPI.web.dto.planners.plans.PlansResponseDto;
 import com.hwanld.EntripAPI.web.dto.planners.plans.PlansReturnDto;
 import com.hwanld.EntripAPI.web.dto.planners.plans.PlansSaveRequestDto;
 import com.hwanld.EntripAPI.web.dto.planners.plans.PlansUpdateRequestDto;
+import com.hwanld.EntripAPI.web.dto.planners.plans.comments.CommentsReturnDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -14,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.nio.charset.Charset;
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -78,4 +80,5 @@ public class PlansController {
         headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
         return new ResponseEntity<>(messages, headers, HttpStatus.OK);
     }
+
 }

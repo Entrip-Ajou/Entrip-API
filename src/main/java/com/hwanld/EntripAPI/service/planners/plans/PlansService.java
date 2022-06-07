@@ -4,15 +4,22 @@ import com.hwanld.EntripAPI.domain.planners.Planners;
 import com.hwanld.EntripAPI.domain.planners.PlannersRepository;
 import com.hwanld.EntripAPI.domain.planners.plans.Plans;
 import com.hwanld.EntripAPI.domain.planners.plans.PlansRepository;
+import com.hwanld.EntripAPI.domain.planners.plans.comments.Comments;
 import com.hwanld.EntripAPI.web.dto.planners.plans.PlansResponseDto;
 import com.hwanld.EntripAPI.web.dto.planners.plans.PlansSaveRequestDto;
 import com.hwanld.EntripAPI.web.dto.planners.plans.PlansUpdateRequestDto;
+import com.hwanld.EntripAPI.web.dto.planners.plans.comments.CommentsResponseDto;
+import com.hwanld.EntripAPI.web.dto.planners.plans.comments.CommentsReturnDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 
 @RequiredArgsConstructor
 @Service
@@ -75,4 +82,6 @@ public class PlansService {
         plansRepository.delete(plans);
         return plan_id;
     }
+
+
 }
