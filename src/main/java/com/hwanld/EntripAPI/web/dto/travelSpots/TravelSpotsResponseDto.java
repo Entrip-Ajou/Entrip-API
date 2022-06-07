@@ -10,7 +10,7 @@ public class TravelSpotsResponseDto {
     private String photoUrl;
     private String location;
     private String description;
-    private Long travelFavorite;
+    private String travelFavorite;
 
     public TravelSpotsResponseDto (TravelSpots entity) {
         this.travelFavorite = entity.getTravelFavorite();

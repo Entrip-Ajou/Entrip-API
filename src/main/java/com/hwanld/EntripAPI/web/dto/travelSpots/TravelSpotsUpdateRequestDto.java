@@ -11,10 +11,10 @@ public class TravelSpotsUpdateRequestDto {
     private String photoUrl;
     private String location;
     private String description;
-    private Long travelFavorite;
+    private String travelFavorite;
 
     @Builder
-    public TravelSpotsUpdateRequestDto (String photoUrl, String location, String description, Long travelFavorite) {
+    public TravelSpotsUpdateRequestDto (String photoUrl, String location, String description, String travelFavorite) {
         this.photoUrl = photoUrl;
         this.location = location;
         this.description = description;

@@ -21,10 +21,10 @@ public class TravelSpots {
     private String photoUrl;
     private String location;
     private String description;
-    private Long travelFavorite;
+    private String travelFavorite;
 
     @Builder
-    public TravelSpots (String travelSpot_name, String photoUrl, String location, String description, Long travelFavorite) {
+    public TravelSpots (String travelSpot_name, String photoUrl, String location, String description, String travelFavorite) {
         this.travelSpot_name = travelSpot_name;
         this.photoUrl = photoUrl;
         this.location = location;
