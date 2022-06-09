@@ -1,109 +1,36 @@
-.container {
-    position: relative;
-    width: 1920px;
-    height: 1080px;
-    background-color: #fff;
-}
-
-.starttext {
-    top: 490px;
-    left: 490px;
-}
-
-.startbutton {
-    width: 99px;
-    height: 37px;
-    font-family: GangwonEduAll;
-    font-size: 32px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.16;
-    letter-spacing: normal;
-    text-align: left;
-    color: #fff;
-    border: 0;
-    outline: 0;
-    background-image: linear-gradient(359deg, #949CA3);
-}
-
-.img451 {
-    width: 980px;
-    height: 696.2px;
-    margin: 0 0 247.8px;
-    padding: 32px 326px 180.4px 32px;
-    object-fit: contain;
-    border-radius: 24px;
-    background-image: linear-gradient(359deg, #a9b1b8 101%, #98a0a7 74%, #8a9299 2%);
-}
-
-.textstart {
-    width: 328px;
-    height: 77px;
-    margin: 233px 0 100.8px 259px;
-    font-family: GangwonEduAll;
-    font-size: 34px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.12;
-    letter-spacing: 2.04px;
-    text-align: center;
-    color: #fff;
-    left: 103px;
-    top: 72px;
-}
-
-.img1 {
-    margin: 281px 0px 196.1px 606px;
-    object-fit: contain;
-    border: solid 1px rgba(0, 0, 0, 0);
-    background-color: #000;
-}
-
-.img451 {
-    margin: 0 0 247.8px;
-    padding: -10px 326px 180.4px 32px;
-    object-fit: contain;
-    border-radius: 24px;
-}
-
-.img834 {
-    margin: 0 auto;
-}
-
-article {
+.article {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
 }
 
-.question {
-    display: none;
+.background {
+    width: 980px;
+    height: 944px;
+    margin: 90px 0 20px;
 }
 
-.result {
-    display: none;
+
+@media screen and (max-width : 980px){
+    .background {
+        width: 767px;
+        margin: 20px auto 20px;
+    }
 }
 
-.share {
-    margin: 0 auto;
+@media screen and (max-width : 768px){
+    .background {
+        width: 570px;
+        margin: 20px auto 20px;
+        border-radius: 25px;
+    }
 }
 
-.question {
-    font-family: GangwonEduAll;
-}
-
-.qtitle {
-    width: 484px;
-    height: 102px;
-    margin: 95.1px 2px 92px 181px;
-    font-family: GangwonEduAll;
-    font-size: 30px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.13;
-    letter-spacing: 0.9px;
-    text-align: center;
-    color: #fff;
+@media screen and (max-width : 576px){
+    .background {
+        width: 400px;
+        margin: 20px auto 20px;
+        border-radius: 25px;
+    }
 }

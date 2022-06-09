@@ -12,7 +12,7 @@ public class WebController {
         return "index";
     }
 
-    @RequestMapping(value = "/index.html")
+    @RequestMapping(value = "index.html")
     public String indexPage() { return "index"; }
 
     @RequestMapping(value = "planner.html")
