@@ -4,8 +4,11 @@ import com.hwanld.EntripAPI.domain.planners.Planners;
 import com.hwanld.EntripAPI.domain.planners.PlannersRepository;
 import com.hwanld.EntripAPI.domain.planners.plans.Plans;
 import com.hwanld.EntripAPI.domain.planners.plans.PlansRepository;
+import com.hwanld.EntripAPI.domain.planners.plans.comments.Comments;
 import com.hwanld.EntripAPI.domain.users.Users;
 import com.hwanld.EntripAPI.domain.users.UsersRepository;
+import com.hwanld.EntripAPI.service.planners.plans.PlansService;
+import com.hwanld.EntripAPI.service.planners.plans.comments.CommentsService;
 import com.hwanld.EntripAPI.web.dto.planners.PlannersResponseDto;
 import com.hwanld.EntripAPI.web.dto.planners.PlannersSaveRequestDto;
 import com.hwanld.EntripAPI.web.dto.planners.PlannersUpdateRequestDto;
@@ -30,6 +33,12 @@ public class PlannersService {
 
     @Autowired
     private PlansRepository plansRepository;
+
+    @Autowired
+    private PlansService plansService;
+
+    @Autowired
+    private CommentsService commentsService;
 
     @Transactional
     public Long save(PlannersSaveRequestDto requestDto) {
@@ -140,6 +149,13 @@ public class PlannersService {
         Iterator plansIterator = planners.getPlans().iterator();
         while(plansIterator.hasNext()) {
             Plans plans = (Plans) plansIterator.next();
+
+            Iterator commentsIterator = plans.getComments().iterator();
+            while(commentsIterator.hasNext()) {
+                Comments comments = (Comments) commentsIterator.next();
+                commentsService.delete(comments.getComment_id());
+            }
+
             plansRepository.delete(plans);
         }
         plannersRepository.deleteById(planner_id);
