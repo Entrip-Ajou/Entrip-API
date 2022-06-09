@@ -85,7 +85,9 @@ public class CommentsService {
                 ()-> new IllegalArgumentException("Error raised at CommentsRepository.findById, " + comment_id)
         );
         Long plan_id = comments.getPlans().getPlan_id();
+
         comments.getPlans().getPlanners().setComment_timeStamp();
+
         comments.getPlans().getComments().remove(comments);
         comments.getUsers().getComments().remove(comments);
         commentsRepository.delete(comments);

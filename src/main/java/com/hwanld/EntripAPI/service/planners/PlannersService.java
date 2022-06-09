@@ -149,10 +149,12 @@ public class PlannersService {
             Iterator commentsIterator = plans.getComments().iterator();
             while(commentsIterator.hasNext()) {
                 Comments comments = (Comments) commentsIterator.next();
+                commentsIterator.remove();
                 commentsService.delete(comments.getComment_id());
             }
 
-            plansRepository.delete(plans);
+            plansIterator.remove();
+            plansService.delete(plans.getPlan_id());
         }
 
         Iterator usersIterator = planners.getUsers().iterator();

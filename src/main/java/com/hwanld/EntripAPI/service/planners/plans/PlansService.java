@@ -87,6 +87,7 @@ public class PlansService {
         Iterator commentsIterator = plans.getComments().iterator();
         while(commentsIterator.hasNext()) {
             Comments comments = (Comments) commentsIterator.next();
+            commentsIterator.remove();
             commentsService.delete(comments.getComment_id());
         }
 
