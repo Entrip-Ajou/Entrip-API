@@ -1,0 +1,78 @@
+@import 'home.css';
+@keyframes scale-up-center {
+    0% {
+        transform: scale(1)
+    }
+    100% {
+        transform: scale(1.1)
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    /* Modified it as sticky on purpose in style.css */
+    height: 80px;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    max-width: 980px;
+}
+
+@media screen and (max-width:767px) {
+    #header {
+        display: none;
+    }
+}
+
+.logo img {
+    width: 160px;
+    height: 80px;
+    margin: 0 102px 0 0;
+    object-fit: contain;
+}
+
+.header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap
+}
+
+#header ul>li {
+    display: inline-block;
+    padding: 0;
+    margin: 3% auto;
+}
+
+.menu>a {
+    background-color: transparent;
+    /* from normalize.css v8.0.1 */
+    text-decoration: none;
+    border: 0;
+    color: #303030;
+    font-size: 16px;
+    padding: 0 29px;
+    font-weight: bold;
+}
+
+.link img {
+    width: 98px;
+    height: 80px;
+    margin: 0 0 0 164px;
+    object-fit: contain;
+}
+
+
+/* 마우스 올리면 애니메이션 */
+
+#header .menu:hover,
+#header .logo:hover,
+#header .link:hover {
+    animation: scale-up-center 0.4s ease-in-out both;
+}
+
+#header .menu>a:hover {
+    color: #0096dc;
+}
