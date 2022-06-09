@@ -60,7 +60,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <script>
-        var pesonality;
+
         var num = 1;
         var q = {
             1: {
@@ -140,82 +140,82 @@
             "SHPF": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "astronaut.png"
+                "img": "traveltest_page/astronaut.png"
             },
             "SHPR": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "astronaut.png"
+                "img": "traveltest_page/astronaut.png"
             },
             "SHLF": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "astronaut.png"
+                "img": "traveltest_page/astronaut.png"
             },
             "SHLR": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "astronaut.png"
+                "img": "traveltest_page/astronaut.png"
             },
             "SAPF": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "astronaut.png"
+                "img": "traveltest_page/astronaut.png"
             },
             "SAPR": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "astronaut.png"
+                "img": "traveltest_page/astronaut.png"
             },
             "SALF": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "astronaut.png"
+                "img": "traveltest_page/astronaut.png"
             },
             "SALR": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "astronaut.png"
+                "img": "traveltest_page/astronaut.png"
             },
             "IHPF": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "astronaut.png"
+                "img": "traveltest_page/astronaut.png"
             },
             "IHPR": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "astronaut.png"
+                "img": "traveltest_page/astronaut.png"
             },
             "IHLF": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "astronaut.png"
+                "img": "traveltest_page/astronaut.png"
             },
             "IHLR": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "astronaut.png"
+                "img": "traveltest_page/astronaut.png"
             },
             "IAPF": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "astronaut.png"
+                "img": "traveltest_page/astronaut.png"
             },
             "IAPR": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "astronaut.png"
+                "img": "traveltest_page/astronaut.png"
             },
             "IALF": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "astronaut.png"
+                "img": "traveltest_page/astronaut.png"
             },
             "IALR": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "astronaut.png"
+                "img": "traveltest_page/astronaut.png"
             }
         }
 
@@ -264,59 +264,9 @@
                 $("#city").html(result[mbti]["city"]);
                 $("#explain").html(result[mbti]["explain"]);
 
-                switch (mbti) {
-                    case "SHPF":
-                        pesonality = 1;
-                        break;
-                    case "SHPR":
-                        pesonality = 2;
-                        break;
-                    case "SHLF":
-                        pesonality = 3;
-                        break;
-                    case "SHLR":
-                        pesonality = 4;
-                        break;
-                    case "SAPF":
-                        pesonality = 5;
-                        break;
-                    case "SAPR":
-                        pesonality = 6;
-                        break;
-                    case "SALF":
-                        pesonality = 7;
-                        break;
-                    case "SALR":
-                        pesonality = 8;
-                        break;
-                    case "IHPF":
-                        pesonality = 9;
-                        break;
-                    case "IHPR":
-                        pesonality = 10;
-                        break;
-                    case "IHLF":
-                        pesonality = 11;
-                        break;
-                    case "IHLR":
-                        pesonality = 12;
-                        break;
-                    case "IAPF":
-                        pesonality = 13;
-                        break;
-                    case "IAPR":
-                        pesonality = 14;
-                        break;
-                    case "IALF":
-                        pesonality = 15;
-                        break;
-                    case "IALR":
-                        pesonality = 16;
-                        break;
-                }
                 var id = new URLSearchParams(location.search).get('user_id');
                 var newurl = "api/v1/users/travelFavorite/";
-                newurl = newurl + id + "/" + pesonality;
+                newurl = newurl + id + "/" + mbti;
                 fetch(newurl, {
                     method: 'PUT',
                     headers: {
