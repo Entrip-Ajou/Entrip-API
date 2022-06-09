@@ -12,27 +12,58 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <header class="header" id="header">
-            <div class="logo">
-                <a href="index.html"><img src="traveltest_page/logo.png" alt="LOGO"></a>
+<div class="wrapper">
+    <header class="header" id="header">
+        <div class="logo">
+            <a href="index.html"><img src="traveltest_page/logo.png" alt="LOGO"></a>
+        </div>
+        <ul>
+            <li class="menu"><a href="#planner" class="navLinks">플래너</a></li>
+            <li class="menu"><a href="#recommand" class="navLinks">추천 여행지</a></li>
+            <li class="menu"><a href="#test" class="navLinks">테스트</a></li>
+            <li class="menu"><a href="#community" class="navLinks">커뮤니티</a></li>
+        </ul>
+        <div class="link">
+            <a href="#download"><img src="traveltest_page/download.png" alt="DOWNLOAD"></a>
+        </div>
+    </header>
+    <article class="start">
+        <img class="background" src="traveltest_page/img451.png">
+        <div class="textbox">
+            <p class="textstart">시뮬레이션으로 알아보는 <br> 나의 여행성향</p>
+            <button type="button" class="startbutton" onclick="start();">시작하기></button>
+        </div>
+    </article>
+    <article class="question">
+        <div class="qtitle" style="position: absolute;">
+            <div style="position: relative;width: 374px; height: 467px; top: 139px; left: 154px;">
+                <h2 id="title">문제</h2>
             </div>
-            <ul>
-                <li class="menu"><a href="#planner" class="navLinks">플래너</a></li>
-                <li class="menu"><a href="#recommand" class="navLinks">추천 여행지</a></li>
-                <li class="menu"><a href="#test" class="navLinks">테스트</a></li>
-                <li class="menu"><a href="#community" class="navLinks">커뮤니티</a></li>
-            </ul>
-            <div class="link">
-                <a href="#download"><img src="traveltest_page/download.png" alt="DOWNLOAD"></a>
+        </div>
+        <input id="type" type="hidden" value="EI">
+        <div style="position: absolute;">
+            <div style="position: relative;width: 374px; height: 467px; top: 419px; left: 365px;">
+                <button id="A" type="button" class="btn btn-secondary mt-5" style="background-color:#717d8b;">Secondary</button>
+                <button id="B" type="button" class="btn btn-secondary mt-5" style="background-color: #717d8b;">Secondary</button>
             </div>
-        </header>
-        <div class="article">
-            <img class="background" src="traveltest_page/img451.png">
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <script>
+        </div>
+        <img src="traveltest_page/img839.png" style="width: 980px; height: 944px;"></img>
+    </article>
+    <article class="result">
+        <img id="img" class="rounded-circle mt-5" src="traveltest_page/astronaut.png" alt="personality">
+        <h2 id="city" class="text-center mt-5">여행성향</h2>
+        <h3 id="explain" class="text-center mt-5">설명</h3>
+        <div class="share addthis_inline_share_toolbox"></div>
+
+    </article>
+    <input type="hidden" id="SI" value="0">
+    <input type="hidden" id="HA" value="0">
+    <input type="hidden" id="PL" value="0">
+    <input type="hidden" id="FR" value="0">
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script>
         var pesonality;
         var num = 1;
         var q = {
@@ -306,7 +337,7 @@
             }
         }
     </script>
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62691fed51315c07"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62691fed51315c07"></script>
 </body>
 
 </html>
