@@ -17,6 +17,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.nio.charset.Charset;
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -72,6 +73,19 @@ public class TravelSpotsController {
                 .httpStatus(200)
                 .message("TravelSpots is deleted well")
                 .data(deleted_travelSpot_name)
+                .build();
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
+        return new ResponseEntity<>(messages, headers, HttpStatus.OK);
+    }
+
+    @GetMapping("api/v1/travelSpots/{travelFavorite}/getTravelSpotsWithTravelFavorite")
+    public ResponseEntity<Messages> getTravelSpotsWithTravelFavorite (@PathVariable String travelFavorite) {
+        List<TravelSpotsResponseDto> travelSpotsResponseDtoList = travelSpotsService.getTravelSpotsWithTravelFavorite(travelFavorite);
+        Messages messages = Messages.builder()
+                .httpStatus(200)
+                .message("Load all travelSpots with travelFavorite : " + travelFavorite)
+                .data(travelSpotsResponseDtoList)
                 .build();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));

@@ -50,16 +50,14 @@ public class TravelSpotsService {
         return travelSpot_name;
     }
 
-//    public List<TravelSpotsResponseDto> getTravelSpotsWithTravelFavorite (String travelFavorite) {
-//        List<TravelSpotsResponseDto> travelSpotsResponseDtoList = new ArrayList<TravelSpotsResponseDto>();
-//        List<TravelSpots> allSpotList = travelSpotsRepository.findAll();
-//        for (TravelSpots travelSpots : allSpotList) {
-//            int count = 0;
-//            for (int i=0;i<4;i++) {
-//                for (int j=0;j<4;j++) {
-//                    //////////////////////////////
-//                }
-//            }
-//        }
-//    }
+    public List<TravelSpotsResponseDto> getTravelSpotsWithTravelFavorite (String travelFavorite) {
+        List<TravelSpotsResponseDto> travelSpotsResponseDtoList = new ArrayList<TravelSpotsResponseDto>();
+        List<TravelSpots> allSpotList = travelSpotsRepository.findAll();
+        for (TravelSpots travelSpots : allSpotList) {
+            if (travelSpots.getTravelFavorite().equals(travelFavorite)) {
+                travelSpotsResponseDtoList.add(new TravelSpotsResponseDto(travelSpots));
+            }
+        }
+        return travelSpotsResponseDtoList;
+    }
 }
