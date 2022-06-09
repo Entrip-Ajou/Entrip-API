@@ -15,7 +15,7 @@ public class TravelSpotsResponseDto {
     private List<String> tags;
 
     public TravelSpotsResponseDto (TravelSpots entity) {
-        this.name = entity.getTravelFavorite();
+        this.name = entity.getTravelSpot_name();
         this.photoUrl = entity.getPhotoUrl();
         this.address = entity.getLocation();
         this.tags = new ArrayList<String>();
