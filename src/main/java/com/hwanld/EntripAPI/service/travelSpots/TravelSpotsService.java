@@ -51,6 +51,7 @@ public class TravelSpotsService {
     }
 
     public List<TravelSpotsResponseDto> getTravelSpotsWithTravelFavorite (String travelFavorite) {
+        travelFavorite = travelFavorite.replace("S", "I");
         List<TravelSpotsResponseDto> travelSpotsResponseDtoList = new ArrayList<TravelSpotsResponseDto>();
         List<TravelSpots> allSpotList = travelSpotsRepository.findAll();
         for (TravelSpots travelSpots : allSpotList) {
