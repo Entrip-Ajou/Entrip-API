@@ -74,4 +74,5 @@ public class Users extends BaseTimeEntity {
     public void addPosts(Posts posts) {
         this.posts.add(posts);
     }
+
 }

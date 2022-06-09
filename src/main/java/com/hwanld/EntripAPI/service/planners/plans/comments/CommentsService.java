@@ -87,6 +87,7 @@ public class CommentsService {
         Long plan_id = comments.getPlans().getPlan_id();
         comments.getPlans().getPlanners().setComment_timeStamp();
         comments.getPlans().getComments().remove(comments);
+        comments.getUsers().getComments().remove(comments);
         commentsRepository.delete(comments);
         return getAllCommentsWithPlanId(plan_id);
     }

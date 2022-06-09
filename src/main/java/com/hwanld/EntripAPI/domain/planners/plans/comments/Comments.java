@@ -51,4 +51,8 @@ public class Comments extends BaseTimeEntity {
         this.users = users;
     }
 
+    public void clearComments() {
+        plans.getComments().clear();
+        users.getComments().clear();
+    }
 }

@@ -5,6 +5,8 @@ import com.hwanld.EntripAPI.domain.planners.PlannersRepository;
 import com.hwanld.EntripAPI.domain.planners.plans.Plans;
 import com.hwanld.EntripAPI.domain.planners.plans.PlansRepository;
 import com.hwanld.EntripAPI.domain.planners.plans.comments.Comments;
+import com.hwanld.EntripAPI.domain.planners.plans.comments.CommentsRepository;
+import com.hwanld.EntripAPI.service.planners.plans.comments.CommentsService;
 import com.hwanld.EntripAPI.web.dto.planners.plans.PlansResponseDto;
 import com.hwanld.EntripAPI.web.dto.planners.plans.PlansSaveRequestDto;
 import com.hwanld.EntripAPI.web.dto.planners.plans.PlansUpdateRequestDto;
@@ -28,6 +30,12 @@ public class PlansService {
 
     @Autowired
     private PlannersRepository plannersRepository;
+
+    @Autowired
+    private CommentsRepository commentsRepository;
+
+    @Autowired
+    private CommentsService commentsService;
 
     @Transactional
     public Long save(PlansSaveRequestDto requestDto) {
@@ -76,7 +84,14 @@ public class PlansService {
         );
         plans.getPlanners().getPlans().remove(plans);
 
+        Iterator commentsIterator = plans.getComments().iterator();
+        while(commentsIterator.hasNext()) {
+            Comments comments = (Comments) commentsIterator.next();
+            commentsService.delete(comments.getComment_id());
+        }
+
         Planners planners = plans.getPlanners();
+        planners.getPlans().remove(plans);
         planners.setTimeStamp(LocalDateTime.now());
 
         plansRepository.delete(plans);

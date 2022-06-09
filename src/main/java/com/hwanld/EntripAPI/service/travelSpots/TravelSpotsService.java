@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.List;
 
 @RequiredArgsConstructor
 @Service
@@ -47,4 +49,17 @@ public class TravelSpotsService {
         travelSpotsRepository.delete(travelSpots);
         return travelSpot_name;
     }
+
+//    public List<TravelSpotsResponseDto> getTravelSpotsWithTravelFavorite (String travelFavorite) {
+//        List<TravelSpotsResponseDto> travelSpotsResponseDtoList = new ArrayList<TravelSpotsResponseDto>();
+//        List<TravelSpots> allSpotList = travelSpotsRepository.findAll();
+//        for (TravelSpots travelSpots : allSpotList) {
+//            int count = 0;
+//            for (int i=0;i<4;i++) {
+//                for (int j=0;j<4;j++) {
+//                    //////////////////////////////
+//                }
+//            }
+//        }
+//    }
 }

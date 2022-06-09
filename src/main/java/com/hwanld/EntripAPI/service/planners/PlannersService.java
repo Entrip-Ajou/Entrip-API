@@ -141,11 +141,7 @@ public class PlannersService {
         Planners planners = plannersRepository.findById(planner_id).orElseThrow(
                 () -> new IllegalArgumentException("Error raise at plannersRepository.findById, " + planner_id)
         );
-        Iterator usersIterator = planners.getUsers().iterator();
-        while(usersIterator.hasNext()) {
-            Users users = (Users) usersIterator.next();
-            users.getPlanners().remove(planners);
-        }
+
         Iterator plansIterator = planners.getPlans().iterator();
         while(plansIterator.hasNext()) {
             Plans plans = (Plans) plansIterator.next();
@@ -158,7 +154,14 @@ public class PlannersService {
 
             plansRepository.delete(plans);
         }
-        plannersRepository.deleteById(planner_id);
+
+        Iterator usersIterator = planners.getUsers().iterator();
+        while(usersIterator.hasNext()) {
+            Users users = (Users) usersIterator.next();
+            users.getPlanners().remove(planners);
+        }
+
+        plannersRepository.delete(planners);
         return planner_id;
     }
 
