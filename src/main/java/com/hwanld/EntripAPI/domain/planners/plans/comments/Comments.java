@@ -50,4 +50,5 @@ public class Comments extends BaseTimeEntity {
     public void setUsers(Users users) {
         this.users = users;
     }
+
 }
