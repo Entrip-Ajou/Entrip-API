@@ -7,66 +7,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="main_page/reset.css">
-    <link rel="stylesheet" href="traveltest_page/style.css">
-    <link rel="stylesheet" href="traveltest_page/header.css">
+    <link rel="stylesheet" href="../main_page/reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="header.css">
 </head>
 
 <body>
-<div class="wrapper">
-    <header class="header" id="header">
-        <div class="logo">
-            <a href="index.html"><img src="../img/main_page/logo.png" alt="LOGO"></a>
-        </div>
-        <ul>
-            <li class="menu"><a href="planner.html" class="navLinks">플래너</a></li>
-            <li class="menu"><a href="recommand.html" class="navLinks">추천 여행지</a></li>
-            <li class="menu"><a href="traveltest.html" class="navLinks">테스트</a></li>
-            <li class="menu"><a href="community_free.html" class="navLinks">커뮤니티</a></li>
-        </ul>
-        <div class="link">
-            <a href="#download"><img src="../img/main_page/download.png" alt="DOWNLOAD"></a>
-        </div>
-    </header>
-    <article class="start">
-        <img class="background" src="traveltest_page/img451.png">
-        <div class="textbox">
-            <p class="textstart">시뮬레이션으로 알아보는 <br> 나의 여행성향</p>
-            <button type="button" class="startbutton" onclick="start();">시작하기></button>
-        </div>
-    </article>
-    <article class="question">
-        <img class="background" src="traveltest_page/img451.png">
-        <div class="questionbox">
-            <h2 id="title">문제</h2>
-            <input id="type" type="hidden" value="EI">
-            <div class="button">
-                <button id="A" type="button" class="btn btn-secondary mt-5" style="background-color:#717d8b;">Secondary</button>
-                <button id="B" type="button" class="btn btn-secondary mt-5" style="background-color: #717d8b;">Secondary</button>
+    <div class="wrapper">
+        <header class="header" id="header">
+            <div class="logo">
+                <a href="../main_page/index.html"><img src="../img/main_page/logo.png" alt="LOGO"></a>
             </div>
-        </div>
-    </article>
-    <article class="result">
-        <img class="background" src="traveltest_page/img451.png">
-        <div class="resultbox">
-            <p class="textresult">여행 성향 테스트 결과</p>
-            <img id="img">
-            <h2 id="city" class="text-center mt-5"></h2>
-            <h3 id="explain" class="text-center mt-5"></h3>
-            <div class="share addthis_inline_share_toolbox"></div>
+            <ul>
+                <li class="menu"><a href="../planner_page/planner.html" class="navLinks">플래너</a></li>
+                <li class="menu"><a href="../recommand_page/recommand.html" class="navLinks">추천 여행지</a></li>
+                <li class="menu"><a href="traveltest.html" class="navLinks">테스트</a></li>
+                <li class="menu"><a href="../community_page/community_free.html" class="navLinks">커뮤니티</a></li>
+            </ul>
+            <div class="link">
+                <a href="#download"><img src="../img/main_page/download.png" alt="DOWNLOAD"></a>
+            </div>
+        </header>
+        <article class="start">
+            <img class="background" src="img451.png">
+            <div class="textbox">
+                <p class="textstart">시뮬레이션으로 알아보는 <br> 나의 여행성향</p>
+                <button type="button" class="startbutton" onclick="start();">시작하기></button>
+            </div>
+        </article>
+        <article class="question">
+            <img class="background" src="img451.png">
+            <div class="questionbox">
+                <h2 id="title">문제</h2>
+                <input id="type" type="hidden" value="EI">
+                <div class="button">
+                    <button id="A" type="button" class="btn btn-secondary mt-5" style="background-color:#717d8b;">Secondary</button>
+                    <button id="B" type="button" class="btn btn-secondary mt-5" style="background-color: #717d8b;">Secondary</button>
+                </div>
+            </div>
+        </article>
+        <article class="result">
+            <img class="background" src="img451.png">
+            <div class="resultbox">
+                <p class="textresult">여행 성향 테스트 결과</p>
+                <img id="img" alt="personality">
+                <h2 id="city" class="text-center mt-5"></h2>
+                <h3 id="explain" class="text-center mt-5"></h3>
+                <div class="share addthis_inline_share_toolbox"></div>
 
-        </div>
+            </div>
 
-    </article>
-    <input type="hidden" id="SI" value="0">
-    <input type="hidden" id="HA" value="0">
-    <input type="hidden" id="PL" value="0">
-    <input type="hidden" id="FR" value="0">
-</div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-<script>
-        var personality;
+        </article>
+        <input type="hidden" id="SI" value="0">
+        <input type="hidden" id="HA" value="0">
+        <input type="hidden" id="PL" value="0">
+        <input type="hidden" id="FR" value="0">
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script>
+        var pesonality;
         var num = 1;
         var q = {
             1: {
@@ -146,82 +146,82 @@
             "SHPF": {
                 "city": "파리형 인간",
                 "explain": "설명",
-                "img": "traveltest_page/SHPF.png"
+                "img": "SHPF.png"
             },
             "SHPR": {
                 "city": "바르셀로나형 인간",
                 "explain": "설명",
-                "img": "traveltest_page/SHPR.png"
+                "img": "SHPR.png"
             },
             "SHLF": {
                 "city": "융프라우형 인간",
                 "explain": "설명",
-                "img": "traveltest_page/SHLF.png"
+                "img": "SHLF.png"
             },
             "SHLR": {
                 "city": "방콕형 인간",
                 "explain": "설명",
-                "img": "traveltest_page/SHLR.png"
+                "img": "SHLR.png"
             },
             "SAPF": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "traveltest_page/astronaut.png"
+                "img": "astronaut.png"
             },
             "SAPR": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "traveltest_page/astronaut.png"
+                "img": "astronaut.png"
             },
             "SALF": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "traveltest_page/astronaut.png"
+                "img": "astronaut.png"
             },
             "SALR": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "traveltest_page/astronaut.png"
+                "img": "astronaut.png"
             },
             "IHPF": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "traveltest_page/astronaut.png"
+                "img": "astronaut.png"
             },
             "IHPR": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "traveltest_page/astronaut.png"
+                "img": "astronaut.png"
             },
             "IHLF": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "traveltest_page/astronaut.png"
+                "img": "astronaut.png"
             },
             "IHLR": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "traveltest_page/astronaut.png"
+                "img": "astronaut.png"
             },
             "IAPF": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "traveltest_page/astronaut.png"
+                "img": "astronaut.png"
             },
             "IAPR": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "traveltest_page/astronaut.png"
+                "img": "astronaut.png"
             },
             "IALF": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "traveltest_page/astronaut.png"
+                "img": "astronaut.png"
             },
             "IALR": {
                 "city": "우주인형",
                 "explain": "설명",
-                "img": "traveltest_page/astronaut.png"
+                "img": "astronaut.png"
             }
         }
 
@@ -289,7 +289,7 @@
             }
         }
     </script>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62691fed51315c07"></script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62691fed51315c07"></script>
 </body>
 
 </html>

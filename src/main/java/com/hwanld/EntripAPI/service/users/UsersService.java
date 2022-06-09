@@ -137,4 +137,6 @@ public class UsersService {
         String result = users.updateTravelFavorite(travelFavorite);
         return result;
     }
+
+
 }

@@ -1,6 +1,6 @@
 @import 'font.css';
 
-.start,.question {
+.start,.question, .result {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -37,7 +37,7 @@
 }
 
 .startbutton {
-    background-color: #949ca3;
+    background-color: #949ca3; 
     font-family: 'GangwonEduAll';
     font-size: 32px;
     line-height: 1.16;
@@ -98,6 +98,41 @@ article {
     margin: 50px auto;
 }
 
+.resultbox {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    max-width: 980px;
+    margin: 100px auto;
+    height: 100vh;
+    width: 100%;
+}
+
+.textresult {
+    width: fit-content;
+    margin: 50px auto;
+    font-family: 'GangwonEduAll';
+    font-size: 32px;
+    line-height: 1.5;
+    letter-spacing: 0.96px;
+    text-align: center;
+    color: #5c5c5c;    
+}
+
+#img {
+    width: 550px;
+    margin: 20px auto;
+}
+#city, #explain {
+    font-size: 25px;
+    width: fit-content;
+    margin: 0 auto;
+    font-family: 'GangwonEduAll';
+    letter-spacing: 0.96px;
+    text-align: center;
+    color: #5c5c5c;    
+}
+
 @media screen and (max-width : 980px){
     .background {
         width: 767px;
@@ -107,6 +142,14 @@ article {
     #title {
         font-size: 28px;
         margin: 240px 121px 0;
+    }
+
+    .resultbox {
+        margin: 50px auto;
+    }
+
+    #img {
+        width: 500px;
     }
 }
 
@@ -120,6 +163,10 @@ article {
     #title {
         font-size: 26px;
         margin: 240px 97px 0;
+    }
+
+    #img {
+        width: 400px;
     }
 }
 
