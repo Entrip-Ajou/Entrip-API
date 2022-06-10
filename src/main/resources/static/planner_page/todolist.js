@@ -1,5 +1,6 @@
 const todoInputElem = document.querySelector('.todo-input');
 const todoListElem = document.querySelector('.todo-list');
+const plusElem = document.querySelector('.plus');
 
 let todos = [];
 let id = 0;
@@ -153,9 +154,16 @@ const init = () => {
     todoInputElem.addEventListener('keypress', (e) =>{
         if( e.key === 'Enter' ){
             appendTodos(e.target.value); todoInputElem.value ='';
+            // newPaintTodos();
+        }
+    })
+    plusElem.addEventListener('keypress', (e) =>{
+        if(e.key === 'Click'){
+            console.log('hello');
             newPaintTodos();
         }
     })
+
 }
 
 init()
