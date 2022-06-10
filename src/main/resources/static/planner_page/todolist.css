@@ -3,8 +3,8 @@ html {
 }
 
 
-.todo-list {
-    margin: 5px 0;
+.todo-box {
+    margin: 5px auto;
 }
 
 .todo-input-box {
