@@ -190,4 +190,8 @@ article {
         font-size: 21px;
         margin: 240px 95px 0;
     }
+
+    #img {
+        width: 75%;
+    }
 }
